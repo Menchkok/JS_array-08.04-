@@ -42,53 +42,32 @@ const films = [
         }
     },
 ];
-const result = films.map((even,index)=>{
+const result = films.map((even)=>{
     const results =  even.details.reviews.reduce((a, b) => a + b.score, 0) / even.details.reviews.length;
-    const resultQuantity = even.details.reviews
    console.log(`The ${even.year} film "${even.title}",which tells of the story of "${even.description}".This movie starred ${even.actors}. It was rated by ${even.details.reviews.length} users, wits rating of ${results}. Register to watch this ${even.details.genre}.`)
 });
 
 
-// const getMovieByYear = (movies,year)=>{
-//     const result = films.map((even)=>{
-//         if(even.id == movies & even.year == year){
-//             console.log(even);
-//         }
-        
-//     });
-    
-// };
-
-// getMovieByYear('Serial',2008);
-
-// const getMovieByTitle = (tytle)=>{
-//     const result = films.map((even)=>{
-//         if(even.title == tytle){
-//             console.log(even);
-//         }
-//     });
-    
-// };
-
-// getMovieByTitle("The Green Mile");
-
- const getMovieByYear = (year) => {
+ const getMovieByYear = (films,year) => {
     const result = films.filter(item =>{
-        if(item.year >= year)
+        if(item.year <= year)
         return true;
     })
     console.log(result);
  }
-getMovieByYear(2003);
 
 
-const getMovieByTitle = (title) => {
-    films.title.toLowerCase();
+getMovieByYear(films,1999);
+
+
+const getMovieByTitle = (films,title) => {
     const result = films.filter(item => {
+        item.title.toLowerCase();
         if(item.title === title)
         return true;
-    });
-    console.log("The lord of the Rings:The Return of the King");
+    })
+    console.log(result);
 }
 
+getMovieByTitle(films,"The Lord of the Rings:The Return of the King");
 // я сделаль 
