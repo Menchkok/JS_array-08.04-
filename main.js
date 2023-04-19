@@ -1,6 +1,6 @@
 const films = [
     {
-        id:"Movie",
+        id:"678",
         title:"The Green Mile",
         year:1999,
         actors:["Tom Hanks","David Morse","Michael Clarke Duncan"],
@@ -14,7 +14,7 @@ const films = [
         }
     },
     {
-        id:"Serial",
+        id:"w32",
         title:"Breaking Bad",
         year:2008,
         actors:["Bryan Cranston","Aaron Paul","Dean Norris"],
@@ -27,7 +27,7 @@ const films = [
         }
     },
     {
-        id:"Anime",
+        id:"342",
         title:"The Lord of the Rings:The Return of the King",
         year:2003,
         actors:["Viggo Mortensen","Elijah Wood","Sean Astin"],
@@ -42,35 +42,53 @@ const films = [
         }
     },
 ];
-const result = films.map((even,index)=>{
-    const results =  even.details.reviews.reduce((a, b) => a + b.score, 0) / even.details.reviews.length;
-    const resultQuantity = even.details.reviews
-    let sum = 0;
-    for(let i = 0;i < resultQuantity.length;i++){
-        sum++;
-    }    
-   console.log(`The ${even.year} film "${even.title}",which tells of the story of "${even.description}".This movie starred ${even.actors}. It was rated by ${sum} users, wits rating of ${results}. Register to watch this ${even.details.genre}.`)
-});
-const getMovieByYear = (movies,year)=>{
-    const result = films.map((even)=>{
-        if(even.id == movies & even.year == year){
-            console.log(even);
-        }
+// const result = films.map((even,index)=>{
+//     const results =  even.details.reviews.reduce((a, b) => a + b.score, 0) / even.details.reviews.length;
+//     const resultQuantity = even.details.reviews
+//    console.log(`The ${even.year} film "${even.title}",which tells of the story of "${even.description}".This movie starred ${even.actors}. It was rated by ${even.details.reviews.length} users, wits rating of ${results}. Register to watch this ${even.details.genre}.`)
+// });
+
+
+// const getMovieByYear = (movies,year)=>{
+//     const result = films.map((even)=>{
+//         if(even.id == movies & even.year == year){
+//             console.log(even);
+//         }
         
-    });
+//     });
     
-};
+// };
 
-getMovieByYear('Serial',2008);
+// getMovieByYear('Serial',2008);
 
-const getMovieByTitle = (tytle)=>{
-    const result = films.map((even)=>{
-        if(even.title == tytle){
-            console.log(even);
-        }
-    });
+// const getMovieByTitle = (tytle)=>{
+//     const result = films.map((even)=>{
+//         if(even.title == tytle){
+//             console.log(even);
+//         }
+//     });
     
-};
+// };
 
-getMovieByTitle("The Green Mile");
+// getMovieByTitle("The Green Mile");
 
+ const getMovieByYear = (year) => {
+    const result = films.filter(item =>{
+        if(item.year >= year)
+        return true;
+    })
+    console.log(result);
+ }
+getMovieByYear(2003);
+
+
+const getMovieByTitle = (title) => {
+    films.title.toLowerCase();
+    const result = films.filter(item => {
+        if(item.title === title)
+        return true;
+    });
+    console.log("The lord of the Rings:The Return of the King");
+}
+
+// я сделаль 
