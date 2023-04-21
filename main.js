@@ -42,7 +42,7 @@ const films = [
         }
     },
 ];
-const result = films.map((even)=>{
+const result = films.filter((even)=>{
     const results =  even.details.reviews.reduce((a, b) => a + b.score, 0) / even.details.reviews.length;
    console.log(`The ${even.year} film "${even.title}",which tells of the story of "${even.description}".This movie starred ${even.actors}. It was rated by ${even.details.reviews.length} users, wits rating of ${results}. Register to watch this ${even.details.genre}.`)
 });
